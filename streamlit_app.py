@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
---import snowflake.connector
+
 
 streamlit.little('My parents new healthy dinner')
 
