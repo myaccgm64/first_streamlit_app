@@ -1,5 +1,4 @@
 import streamlit
-streamlit.stop()
 import pandas
 import snowflake.connector
 from urllib.error import URLError
@@ -21,7 +20,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 fruit_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Lime'])
 fruits_to_show = my_fruit_list.loc[fruit_selected]
 streamlit.dataframe(fruits_to_show)
-
+streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
